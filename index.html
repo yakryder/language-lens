@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+    <section data-language="spanish">
+        <div data-paragraph-number="1">
+            <p>Se empeña don Miguel de Unamuno en que ponga yo un prólogo a este su libro en que se relata la tan lamentable historia de mi buen amigo Augusto Pérez y su misteriosa muerte, y yo no puedo menos sino escribirlo, porque los deseos del señor Unamuno son para mí mandatos, en la más genuina acepción de este vocablo. Sin haber yo llegado al extremo de escepticismo hamletiano de mi pobre amigo Pérez, que llegó hasta a dudar de su propia existencia, estoy por lo menos firmemente persuadido de que carezco de eso que los psicólogos llaman libre albedrío, aunque para mi consuelo creo también que tampoco goza don Miguel de él.</p>
+        </div>
+    </section>
+
+    <section data-language="english">
+        <div data-paragraph-number="1">
+            
+        </div>
+    </section>
+</body>
+
+<style>
+    .lit {
+        color: #7062e9;
+    }
+</style>
+
+<script>
+    const addEventListenersToAllSegments = () => {        
+        for (const segment of getSegments()) {
+            addEventListenersTo(segment);
+        }
+    }
+
+    const getSegments = () => {
+        return document.querySelectorAll('[data-segment-id]');
+    } 
+
+    const addEventListenersTo = (segment) => {
+        segment.addEventListener('mouseover', handleMouseOverOnSegment);
+        segment.addEventListener('mouseout', handleMouseOutOnSegment);
+    }
+
+    const handleMouseOverOnSegment = (mouseOverEvent) => {
+        lightSelfAndPair(mouseOverEvent.currentTarget);
+    }
+
+    const handleMouseOutOnSegment = (mouseOutEvent) => {
+        dimSelfAndPair(mouseOutEvent.currentTarget);
+    }
+
+    const lightSelfAndPair = (segment) => {
+        lightSelf(segment);
+        lightPair(segment);
+    }
+
+    const lightSelf = (segment) => {
+        light(segment);
+    }
+
+    const lightPair = (segment) => {
+        light(getPairOf(segment));
+    }
+
+    const light = (segment) => {
+        segment.classList.add('lit');
+    }
+
+    const dimSelfAndPair = (segment) => {
+        dimSelf(segment);
+        dimPair(segment);
+    }
+
+    const dimSelf = (segment) => {
+        dim(segment);
+    }
+
+    const dimPair = (segment) => {
+        dim(getPairOf(segment));
+    }
+
+    const dim = (segment) => {
+        segment.classList.remove('lit');
+    }
+
+    const getPairOf = (segment) => {
+        const [pair] = document.querySelectorAll(`[data-segment-id="${segment.dataset.segmentId}"]:not([data-language="${getLanguageOf(segment)}"]`);
+        return pair;
+    }
+
+    const getLanguageOf = (element) => {
+        return element.dataset.language;
+    }
+
+    const assignLanguagePropertyToAllSegments = () => {
+        for (const segment of getSegments()) {
+            assignLanguagePropertyTo(segment);
+        }
+    }
+
+    const assignLanguagePropertyTo = (segment) => {
+        segment.setAttribute('data-language', getLanguageOf(segment.parentElement.parentElement.parentElement));
+    }
+
+    addEventListenersToAllSegments();
+    assignLanguagePropertyToAllSegments();
+</script>
+
+</html>
