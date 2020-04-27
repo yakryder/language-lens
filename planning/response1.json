@@ -1,0 +1,21 @@
+// One way of structuring responses. 
+// Text nodes are returned in an array.
+// Each text node knows its language and its segments.
+
+{
+    "texts": [
+        {
+            "language": "spanish",
+            "segments": []
+        },
+        {
+            "language": "english",
+            "segments": []
+        }
+    ]
+}
+
+// Pros:
+// Each node knows its language so no dependence on magic or ordering
+// Cons:
+// As the languages are presumably available in the request, this might not be right

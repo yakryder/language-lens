@@ -1,0 +1,37 @@
+// Another way of structuring responses
+// The key in this object was originally "pairs".
+// I have changed it to "phrases" per the below discussion.
+
+{
+    "phrases": [
+        {
+            "id": 1,
+            "spanish": "Se empeña don Miguel de Unamuno ",
+            "english": "Don Miguel de Unamuno is adamant "
+        },
+        {
+            "id": 2,
+            "spanish": "en que ponga yo un prólogo a este su libro ",
+            "english": "that I write a prologue for this book of his "
+        }
+    ]
+}
+
+// maybe these are messages, not pairs?
+// segments?
+// phrases?
+// units?
+// concepts?
+
+// Phrases and messages have an edge because they are unambiguously communication-focused. 
+// A message always has a surface and underlying form, and even a musical phrase is a form of communication.
+// Phrase seems to have a big edge over message as it is much more at home in this context of translation.
+// A phrase will be never be fewer than two words in English.
+
+// Pros:
+// Server is exclusively concerned with serving back phrases.
+
+// Cons:
+// The ordering of said phrases is important enough that it may deserve to be a first-class citizen.
+// But if so, who should know the order?
+// Is it really so bad if the ordering is invariant?

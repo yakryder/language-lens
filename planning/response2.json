@@ -1,0 +1,20 @@
+// Another way of structuring responses.
+// Burden of knowing its own language is no longer on the segment
+// Really, a segment shouldn't need to know it's own language, though it could be advantageous.
+// It should only need to know its pair(s).
+
+// Maybe pairing-id and word-id?
+
+{
+    "texts": {
+
+        "english": {
+            "segments": []
+        },
+
+        "spanish": {
+            "segments": []
+        }
+
+    }
+}
