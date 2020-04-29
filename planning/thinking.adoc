@@ -1,0 +1,36 @@
+= Thinking
+
+:app-name: Language Lens
+:app-name: pass:include::../docs/app-name.adoc[]
+
+== Domain Objects
+
+The principal unit of concern in {app-name} is a **phrase**.
+
+=== Phrases
+
+Each phrase has a unique id.
+
+Phrases are composed of **phrasal units** and have many **renderings**.
+
+==== Phrasal Units
+
+Each language can be broken down into the smallest possible orthographic unit that may be assigned semantic meaning.
+
+For most languages, this is a word. This does **not** negate the fact that prosodic and phonetic variance in the utterance of syllable may be employed to significantly alter the meaning of a message in these languages, merely that at the **orthographic** level there is no meaningful unit smaller than a word (which may of course be monosyllabic).
+
+For languages like Tibetan, Japanese, and Chinese -- where orthographic representations of single syllables can carry meaning even outside of the context of monosyllabic words -- the base unit is a syllable. Not all syllables have meaning.
+
+Some examples:
+
+For English, a language where the word is the smallest meaningful phrasal unit, the presence of a whitespace character indicates the boundary between the smallest possible units that can carry meaning.
+
+For Tibetan, a language where the syllable is the smallest meaningful phrasal unit, the presence of a punctuating dot called a tsek (`་`) indicates the boundary between the smallest possible units that can carry meaning.
+
+==== Renderings
+
+A rendering is the orthographic representation of a phrase in a given language.
+
+Each phrase and language combination will have exactly one rendering.
+
+Renderings do not exist outside of phrases. <<phrases>>
