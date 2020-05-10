@@ -1,7 +1,6 @@
 = Thinking
 
-:app-name: Language Lens
-:app-name: pass:include::../docs/app-name.adoc[]
+include::../docs/globals.adoc[]
 
 == Domain Objects
 

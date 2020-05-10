@@ -1,0 +1,2 @@
+:description: A file for setting variables used throughout the project documentation
+:app-name:    Language Lens
