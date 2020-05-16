@@ -1,0 +1,13 @@
+= Acceptance Testing
+
+We have UI (and probably API) acceptance tests to give end-to-end assurances on basic app functionality. 
+
+More refined stuff is checked at the integration level. 
+
+Really nitty-gritty cases are checked at the unit level. 
+
+Because the lingua franca and most common language for front-end development is JavaScript, the language for the acceptance tests is also JavaScript. It seems needless and of dubious value to couple these checks with the backend languages of the services they are checking. 
+
+The JavaScript used is strongly typed because I am of the opinion that in most contexts the benefits of strong typing far oughtweigh the drawbacks; and that, for most projects, dynamic languages (often touted as speeding up development) have a strong propensity towards making developers less productive. 
+
+Different parts of the app are exercised by dedicated clients.
