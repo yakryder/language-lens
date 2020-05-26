@@ -4,13 +4,13 @@
 <body>
     <section data-language="spanish">
         <div data-sentence-number="1">
-            <p><span data-segment-id="1">Se empeña don Miguel de Unamuno </span><span data-segment-id="2">en que ponga yo un prólogo a este su libro </span><span data-segment-id="3">en que se relata la tan lamentable historia </span></span><span data-segment-id="4">de mi buen amigo Augusto Pérez y su misteriosa muerte, </span><span data-segment-id="5">y yo no puedo menos sino escribirlo, </span><span data-segment-id="6">porque los deseos del señor Unamuno son para mí mandatos, </span><span data-segment-id="7">en la más genuina acepción de este vocablo.</span></p>
+            <p><span data-phrase-id="1">Se empeña don Miguel de Unamuno </span><span data-phrase-id="2">en que ponga yo un prólogo a este su libro </span><span data-phrase-id="3">en que se relata la tan lamentable historia </span></span><span data-phrase-id="4">de mi buen amigo Augusto Pérez y su misteriosa muerte, </span><span data-phrase-id="5">y yo no puedo menos sino escribirlo, </span><span data-phrase-id="6">porque los deseos del señor Unamuno son para mí mandatos, </span><span data-phrase-id="7">en la más genuina acepción de este vocablo.</span></p>
         </div>
     </section>
 
     <section data-language="english">
         <div data-sentence-number="1">
-            <p><span data-segment-id="1">Don Miguel de Unamuno is adamant </span><span data-segment-id="2">that I write a prologue for this book of his </span><span data-segment-id="3">in which he tells the lamentable story </span><span data-segment-id="4">of my good friend Augusto Pérez and his mysterious death; </span><span data-segment-id="5">therefore I have no choice but to write it, </span><span data-segment-id="6">as the wishes of Mr. Unamuno are for me commands, </span><span data-segment-id="7">in the most genuine sense of the word.</span></p>
+            <p><span data-phrase-id="1">Don Miguel de Unamuno is adamant </span><span data-phrase-id="2">that I write a prologue for this book of his </span><span data-phrase-id="3">in which he tells the lamentable story </span><span data-phrase-id="4">of my good friend Augusto Pérez and his mysterious death; </span><span data-phrase-id="5">therefore I have no choice but to write it, </span><span data-phrase-id="6">as the wishes of Mr. Unamuno are for me commands, </span><span data-phrase-id="7">in the most genuine sense of the word.</span></p>
         </div>
     </section>
 </body>
@@ -22,65 +22,65 @@
 </style>
 
 <script>
-    const addEventListenersToAllSegments = () => {        
-        for (const segment of getSegments()) {
-            addEventListenersTo(segment);
+    const addEventListenersToAllPhrases = () => {        
+        for (const phrase of getPhrases()) {
+            addEventListenersTo(phrase);
         }
     }
 
-    const getSegments = () => {
-        return document.querySelectorAll('[data-segment-id]');
+    const getPhrases = () => {
+        return document.querySelectorAll('[data-phrase-id]');
     } 
 
-    const addEventListenersTo = (segment) => {
-        segment.addEventListener('mouseover', handleMouseOverOnSegment);
-        segment.addEventListener('mouseout', handleMouseOutOnSegment);
+    const addEventListenersTo = (phrase) => {
+        phrase.addEventListener('mouseover', handleMouseOverOnPhrase);
+        phrase.addEventListener('mouseout', handleMouseOutOnPhrase);
     }
 
-    const handleMouseOverOnSegment = (mouseOverEvent) => {
+    const handleMouseOverOnPhrase = (mouseOverEvent) => {
         lightSelfAndPair(mouseOverEvent.currentTarget);
     }
 
-    const handleMouseOutOnSegment = (mouseOutEvent) => {
+    const handleMouseOutOnPhrase = (mouseOutEvent) => {
         dimSelfAndPair(mouseOutEvent.currentTarget);
     }
 
-    const lightSelfAndPair = (segment) => {
-        lightSelf(segment);
-        lightPair(segment);
+    const lightSelfAndPair = (phrase) => {
+        lightSelf(phrase);
+        lightPair(phrase);
     }
 
-    const lightSelf = (segment) => {
-        light(segment);
+    const lightSelf = (phrase) => {
+        light(phrase);
     }
 
-    const lightPair = (segment) => {
-        light(getPairOf(segment));
+    const lightPair = (phrase) => {
+        light(getPairOf(phrase));
     }
 
-    const light = (segment) => {
-        segment.classList.add('lit');
+    const light = (phrase) => {
+        phrase.classList.add('lit');
     }
 
-    const dimSelfAndPair = (segment) => {
-        dimSelf(segment);
-        dimPair(segment);
+    const dimSelfAndPair = (phrase) => {
+        dimSelf(phrase);
+        dimPair(phrase);
     }
 
-    const dimSelf = (segment) => {
-        dim(segment);
+    const dimSelf = (phrase) => {
+        dim(phrase);
     }
 
-    const dimPair = (segment) => {
-        dim(getPairOf(segment));
+    const dimPair = (phrase) => {
+        dim(getPairOf(phrase));
     }
 
-    const dim = (segment) => {
-        segment.classList.remove('lit');
+    const dim = (phrase) => {
+        phrase.classList.remove('lit');
     }
 
-    const getPairOf = (segment) => {
-        const [pair] = document.querySelectorAll(`[data-segment-id="${segment.dataset.segmentId}"]:not([data-language="${getLanguageOf(segment)}"]`);
+    const getPairOf = (phrase) => {
+        const [pair] = document.querySelectorAll(`[data-phrase-id="${phrase.dataset.PhraseId}"]:not([data-language="${getLanguageOf(phrase)}"]`);
         return pair;
     }
 
@@ -88,18 +88,18 @@
         return element.dataset.language;
     }
 
-    const assignLanguagePropertyToAllSegments = () => {
-        for (const segment of getSegments()) {
-            assignLanguagePropertyTo(segment);
+    const assignLanguagePropertyToAllPhrases = () => {
+        for (const phrase of getPhrases()) {
+            assignLanguagePropertyTo(phrase);
         }
     }
 
-    const assignLanguagePropertyTo = (segment) => {
-        segment.setAttribute('data-language', getLanguageOf(segment.parentElement.parentElement.parentElement));
+    const assignLanguagePropertyTo = (phrase) => {
+        phrase.setAttribute('data-language', getLanguageOf(phrase.parentElement.parentElement.parentElement));
     }
 
-    addEventListenersToAllSegments();
-    assignLanguagePropertyToAllSegments();
+    addEventListenersToAllPhrases();
+    assignLanguagePropertyToAllPhrases();
 </script>
 
 </html>
