@@ -4,13 +4,13 @@
 <body>
     <section data-language="spanish">
         <div data-sentence-number="1">
-            <p><span data-phrase-id="1">Se empeña don Miguel de Unamuno </span><span data-phrase-id="2">en que ponga yo un prólogo a este su libro </span><span data-phrase-id="3">en que se relata la tan lamentable historia </span></span><span data-phrase-id="4">de mi buen amigo Augusto Pérez y su misteriosa muerte, </span><span data-phrase-id="5">y yo no puedo menos sino escribirlo, </span><span data-phrase-id="6">porque los deseos del señor Unamuno son para mí mandatos, </span><span data-phrase-id="7">en la más genuina acepción de este vocablo.</span></p>
+            <p><span data-phrase-id="899ac06e-f8a6-475d-b270-f0b6b37037a6">Se empeña don Miguel de Unamuno </span><span data-phrase-id="f9478691-3576-473c-9a46-8a24fcdb6c3d">en que ponga yo un prólogo a este su libro </span><span data-phrase-id="c1c97863-9f69-4b47-bdf0-d36d99a2338e">en que se relata la tan lamentable historia </span></span><span data-phrase-id="fff0f79f-c83a-436f-a392-eb49f8239c9c">de mi buen amigo Augusto Pérez y su misteriosa muerte, </span><span data-phrase-id="70f24f83-16a1-4f69-863f-d5bf201bb80a">y yo no puedo menos sino escribirlo, </span><span data-phrase-id="989e2de6-9abb-43a9-97bc-cbb6acfd1067">porque los deseos del señor Unamuno son para mí mandatos, </span><span data-phrase-id="26259715-5167-4b68-96f4-28dcb0c1c499">en la más genuina acepción de este vocablo.</span></p>
         </div>
     </section>
 
     <section data-language="english">
         <div data-sentence-number="1">
-            <p><span data-phrase-id="1">Don Miguel de Unamuno is adamant </span><span data-phrase-id="2">that I write a prologue for this book of his </span><span data-phrase-id="3">in which he tells the lamentable story </span><span data-phrase-id="4">of my good friend Augusto Pérez and his mysterious death; </span><span data-phrase-id="5">therefore I have no choice but to write it, </span><span data-phrase-id="6">as the wishes of Mr. Unamuno are for me commands, </span><span data-phrase-id="7">in the most genuine sense of the word.</span></p>
+            <p><span data-phrase-id="899ac06e-f8a6-475d-b270-f0b6b37037a6">Don Miguel de Unamuno is adamant </span><span data-phrase-id="f9478691-3576-473c-9a46-8a24fcdb6c3d">that I write a prologue for this book of his </span><span data-phrase-id="c1c97863-9f69-4b47-bdf0-d36d99a2338e">in which he tells the lamentable story </span><span data-phrase-id="fff0f79f-c83a-436f-a392-eb49f8239c9c">of my good friend Augusto Pérez and his mysterious death; </span><span data-phrase-id="70f24f83-16a1-4f69-863f-d5bf201bb80a">therefore I have no choice but to write it, </span><span data-phrase-id="989e2de6-9abb-43a9-97bc-cbb6acfd1067">as the wishes of Mr. Unamuno are for me commands, </span><span data-phrase-id="26259715-5167-4b68-96f4-28dcb0c1c499">in the most genuine sense of the word.</span></p>
         </div>
     </section>
 </body>
@@ -80,7 +80,7 @@
     }
 
     const getPairOf = (phrase) => {
-        const [pair] = document.querySelectorAll(`[data-phrase-id="${phrase.dataset.PhraseId}"]:not([data-language="${getLanguageOf(phrase)}"]`);
+        const [pair] = document.querySelectorAll(`[data-phrase-id="${phrase.dataset.phraseId}"]:not([data-language="${getLanguageOf(phrase)}"]`);
         return pair;
     }
 

@@ -8,9 +8,9 @@ The principal unit of concern in {app-name} is a **phrase**.
 
 === Phrases
 
-Each phrase has a unique id.
+Each Phrase has a unique id.
 
-Phrases are composed of **phrasal units** and have many **renderings**.
+Phrases are composed of <<Phrasal Units>> and have many <<Renderings>>.
 
 ==== Phrasal Units
 
@@ -28,8 +28,8 @@ For Tibetan, a language where the syllable is the smallest meaningful phrasal un
 
 ==== Renderings
 
-A rendering is the orthographic representation of a phrase in a given language.
+A Rendering is the orthographic representation of a <<Phrases>>[Phrase] in a given language.
 
 Each phrase and language combination will have exactly one rendering.
 
-Renderings do not exist outside of phrases. <<phrases>>
+Renderings do not exist outside of <<Phrases>>.
