@@ -1,9 +1,0 @@
-{
-    "integrationFolder": "test/acceptance",
-    "fixturesFolder"   : "test/acceptance/cypress/fixtures",
-    "pluginsFile"      : "test/acceptance/cypress/plugins",
-    "screenshotsFolder": "test/acceptance/cypress/screenshots",
-    "supportFile"      : "test/acceptance/cypress/support",
-    "videosFolder"     : "test/acceptance/cypress/videos",
-    "componentFolder"  : "test/acceptance/cypress/component"
-}
